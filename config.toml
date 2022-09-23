@@ -1,0 +1,89 @@
+baseURL = "https://apoorvajagtap.github.io"
+languageCode = "en-us"
+defaultContentLanguage = "en"
+title = "Apoorva Jagtap, Personal Blog"
+theme = "cupper-hugo-theme"
+googleAnalytics = "UA-123456789-1"
+disqusShortname = "yourdiscussshortname"
+enableGitInfo = true
+
+[taxonomies]
+tag = "tags"
+
+[permalinks]
+post = "/:filename/"
+
+[imaging]
+quality = 99
+
+[params]
+description = "Software Engineer and a candid writer"
+homeMetaContent = "Software Engineer"
+footer = "Made with [Hugo](https://gohugo.io/). Themed by [Cupper](https://github.com/zwbetz-gh/cupper-hugo-theme). Deployed to [Netlify](https://www.netlify.com/)."
+dateFormat = "Jan 2, 2006"
+codePenUser = "someUser"
+katex = true
+hideHeaderLinks = false
+search = true
+showThemeSwitcher = true
+defaultDarkTheme = true
+moveFooterToHeader = false
+logoAlt = "ApoorvaJ"
+customCss = [ "css/custom_01.css", "css/custom_02.css" ]
+customJs = [ "js/custom_01.js", "js/custom_02.js" ]
+
+[[menu.nav]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.nav]]
+name = "Blog"
+url = "/post/"
+weight = 2
+
+[[menu.nav]]
+name = "Tags"
+url = "/tags/"
+weight = 3
+
+[[menu.nav]]
+name = "About"
+url = "/about/"
+weight = 4
+
+[markup]
+defaultMarkdownHandler = "goldmark"
+
+[markup.goldmark.extensions]
+definitionList = true
+footnote = true
+linkify = true
+strikethrough = true
+table = true
+taskList = true
+typographer = true
+
+[markup.goldmark.parser]
+attribute = true
+autoHeadingID = true
+
+[markup.goldmark.renderer]
+hardWraps = false
+unsafe = true
+xHTML = false
+
+  [markup.highlight]
+  codeFences = false
+  hl_Lines = ""
+  lineNoStart = 1
+  lineNos = false
+  lineNumbersInTable = true
+  noClasses = true
+  style = "overpass"
+  tabWidth = 4
+
+  [markup.tableOfContents]
+  endLevel = 6
+  startLevel = 2
+
