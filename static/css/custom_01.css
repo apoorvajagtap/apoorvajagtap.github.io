@@ -1,7 +1,9 @@
 /* Fonts */
+@import url('//fonts.googleapis.com/css?family=Kalam');
+
 @font-face {
   font-family: 'GrannyRegular';
-  src: url('{{ "css/fonts/GrannyRegular-ALYgg.ttf" | absURL }}') format('ttf');
+  src: url('{{ "css/fonts/GrannyRegular-ALYgg.ttf" }}') format('ttf');
   font-weight: bold;
   font-style: normal;
 }
@@ -29,7 +31,7 @@ template {
 display: none !important;
 }
 * + * {
-  margin-top: 2.25rem;
+  margin-top: 1.25rem;
 }
 br,
 dt,
@@ -41,6 +43,8 @@ option,
 li + li,
 body,
 .main-and-footer {
+  /* font-family: 'Kalam'; */
+  line-height: 1.5rem;
   margin-top: 0;
 }
 p + p {
@@ -120,7 +124,7 @@ h3,
 h4 {
   font-family: Miriam Libre, serif;
   text-align: center;
-  line-height: 1.125;
+  line-height: 1.5;
 }
 h1 {
   font-size: 2rem;
@@ -323,7 +327,7 @@ caption {
   overflow-x: hidden;
 }
 .intro-and-nav {
-  font-size: 0.8rem;
+  font-size: 1rem;
   width: 15rem;
   height: 100vh;
   position: fixed;
@@ -338,6 +342,7 @@ caption {
   height: 100%;
 }
 .intro {
+font-family: 'Kalam';
 flex: 0 0 auto;
 }
 .patterns {

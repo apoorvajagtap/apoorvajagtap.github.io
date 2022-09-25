@@ -4,7 +4,6 @@ defaultContentLanguage = "en"
 title = "Apoorva Jagtap, Personal Blog"
 theme = "cupper-hugo-theme"
 googleAnalytics = "UA-123456789-1"
-disqusShortname = "yourdiscussshortname"
 enableGitInfo = true
 
 [taxonomies]
@@ -17,9 +16,9 @@ post = "/:filename/"
 quality = 99
 
 [params]
-description = "Software Engineer and a candid writer"
+description = "Software Engineer & a candid writer"
 homeMetaContent = "Software Engineer"
-footer = "Made with [Hugo](https://gohugo.io/). Themed by [Cupper](https://github.com/zwbetz-gh/cupper-hugo-theme). Deployed to [Netlify](https://www.netlify.com/)."
+footer = "Made with [Hugo](https://gohugo.io/). Themed by [Cupper](https://github.com/zwbetz-gh/cupper-hugo-theme)."
 dateFormat = "Jan 2, 2006"
 codePenUser = "someUser"
 katex = true
