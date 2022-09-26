@@ -24,8 +24,7 @@ As we are quite aware that arrays have a fixed size, whereas slices are dynamic.
 
 Whenever we declare a slice using make(), make allocates an array and returns a slice pointing to that array.
 
-<img src="/img/slice_array.png" align="center">
-<!-- ![Slice-Array](/img/slice_array.png) -->
+![Slice_Array](/images/post/slice_array.png)
 
 As slice refers to an array, each slice could/couldn't be pointing to a different array or segments of array. Due to this, a single '==' is not enough to determine if slices are equal or not. There are methods like *reflect.DeepEqual()* to compare, but [GoLang's Map spec](https://go.dev/ref/spec#Making_slices_maps_and_channels) strictly mentions:<br>
 
