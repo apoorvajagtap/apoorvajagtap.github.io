@@ -1,5 +1,5 @@
 ---
-title: "..Welcome to my Corner.."
+title: "Namaste!"
 date: 2022-09-25T01:24:57+05:30
 ---
 <span style="font-family:'Kalam'">
