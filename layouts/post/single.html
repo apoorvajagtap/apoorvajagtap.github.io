@@ -19,8 +19,33 @@
       <!-- {{ end }} -->
     </div>
 
-    {{ with .Params.tags }}
+    <!-- if you need the tags section at the start of blogs -->
+    <!-- {{ with .Params.tags }}
       <div class="tags">
+        <strong>{{ T "tags" }} </strong>
+        <ul aria-label="{{ T "aria_label_tags" }}">
+          {{ range . }}
+            <li>
+              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                <use href="#tag"></use>
+              </svg>
+              {{ $href := print ("tags/" | relLangURL) (. | urlize) "/" }}
+              <a href="{{ $href }}">{{ . }}</a>
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+    {{ end }} -->
+
+    <!-- {{ partial "toc.html" . }} -->
+
+    {{ .Content }}
+  </main>
+
+  <br><br>
+  <!-- if you need the tags section at the end of blogs -->
+  {{ with .Params.tags }}
+      <div class="tags" align="center">
         <strong>{{ T "tags" }} </strong>
         <ul aria-label="{{ T "aria_label_tags" }}">
           {{ range . }}
@@ -36,9 +61,5 @@
       </div>
     {{ end }}
 
-    {{ partial "toc.html" . }}
-
-    {{ .Content }}
-  </main>
-  {{ partial "disqus.html" . }}
+    {{ partial "disqus.html" . }}
 {{ end }}

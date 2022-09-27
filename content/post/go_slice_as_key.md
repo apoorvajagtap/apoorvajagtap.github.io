@@ -1,6 +1,7 @@
 ---
 title: "GoLang Slice as Key in Map"
 date: 2022-09-25T01:40:25+05:30
+tags: ['golang', 'slices', 'maps']
 ---
 
 <span style="font-size:25px; font-family:'Kalam'">
