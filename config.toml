@@ -53,6 +53,7 @@ weight = 4
 
 [markup]
 defaultMarkdownHandler = "goldmark"
+pygmentsCodefences = true
 
 [markup.goldmark.extensions]
 definitionList = true

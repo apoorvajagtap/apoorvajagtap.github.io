@@ -2,6 +2,7 @@
 title: "CVO during OpenShift upgrade"
 date: 2022-10-07T21:23:08+05:30
 tags: ['openshift', 'auto update', 'cluster version operator']
+draft: true
 ---
 
 <span style="font-size:25px; font-family:'Kalam'">
@@ -22,7 +23,31 @@ With the start of CVO container, we initialize the controllers and attempt to lo
 
 The value of `resyncPeriod(o.ResyncInterval)()` is determined using a constant [**minResyncPeriod**](https://github.com/openshift/cluster-version-operator/blob/master/pkg/start/start.go#L47), which is set to '2 Minutes'.
 
-<img src="/images/post/cvo_start_go.png" alt="start.go" class="center">
+```GO
+const (
+	...
+	minResyncPeriod = 2 * time.Minute
+)
+...
+func NewOptions() *Options {
+	return &Options{
+		...
+		ResyncInterval:  minResyncPeriod,
+		...
+	}
+}
+...
+func (o *Options) NewControllerContext(cb *ClientBuilder, startingFeatureSet string) *Context {
+    ...
+		CVO: cvo.New(
+			...
+			resyncPeriod(o.ResyncInterval)(),
+			...
+        )
+  ...
+}
+``` 
+<!-- <img src="/images/post/cvo_start_go.png" alt="start.go" class="center"> -->
 <!-- ![start.go](/images/post/cvo_start_go.png) -->
 
 So, by default, the minimun reconcile period for CVO is **2 minutes**.
@@ -33,7 +58,21 @@ So, by default, the minimun reconcile period for CVO is **2 minutes**.
 
 The **`--enable-auto-update`** option if set to **`true`** enables the `autoupdate controller` and, hence informs CVO that the auto-update is enabled. This option is basically specified as a container argument in `deployment.apps/cluster-version-operator`. 
 
-![CVO_container_args](/images/post/cvo_container_args.png)
+```JSON
+$ oc get deployment cluster-version-operator -ojson -n openshift-cluster-version | jq .spec.template.spec.containers[].args
+[
+  "start",
+  "--release-image=quay.io/openshift-release-dev/ocp-release@sha256:3820c168791c2372cae687a022e009a8beafeff01dbb61f419d29d546cde02d9",
+  "--enable-auto-update=false",
+  "--enable-default-cluster-version=true",
+  "--listen=0.0.0.0:9099",
+  "--serving-cert-file=/etc/tls/serving-cert/tls.crt",
+  "--serving-key-file=/etc/tls/serving-cert/tls.key",
+  "--v=2"
+]
+```
+
+<!-- ![CVO_container_args](/images/post/cvo_container_args.png) -->
 
 
 <br>I hope this blog helps you with a better understanding of OpenShift's Cluster version Operator's role during the update process.
