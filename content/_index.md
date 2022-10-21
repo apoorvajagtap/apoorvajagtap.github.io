@@ -8,7 +8,7 @@ Hello there, I am Apoorva!
 
 I am a Software Engineer, juggling through technologies during business hours and expressing my thoughts in the off hours.
 
-I am fortunate to encounter multiple production impacted situations on a regular basis, so sharing my experiences, the chaos, and the workarounds here just in case someone else faces the similar. Hope you find it interesting!
+I try to learn something new with each day, some days it's a success and some days a failure. But, eventually it adds up to my experiences. So, I am here to share such similar experiences, hoping that someone finds it interesting & helpful!
 
 *(Disclaimer: I am a story teller :P)*
 </span>
