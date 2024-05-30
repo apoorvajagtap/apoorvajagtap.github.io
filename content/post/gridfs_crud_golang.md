@@ -29,5 +29,5 @@ In addition to this file's content management, GridFS also takes care of managin
 
 <img src="/images/post/gridfs_collections.png" alt="Gridfs collections" class="center">
 
-Now that we have discussed the basic components I'll be using to build my server, let's move to the next part to dive into the implementations.
+Now that we have discussed the basic components I'll be using to build my server, let's move to the [next part](https://apoorvajagtap.github.io/gridfs_crud_golang_part_2/) to dive into the implementations.
 </span>
